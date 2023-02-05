@@ -26,6 +26,6 @@ def show_only_what_is_ready_for_publish(request : HttpRequest):
 
 
 def show_only_what_is_not_ready_for_publish(request : HttpRequest):
-    ready_blog = Post.objects.filter(is_published = False)
-    context = {'ready_blog':ready_blog}
-    return render(request , 'main/show_ready_blog.html' , context)       
+    not_ready_blog = Post.objects.filter(is_published = False)
+    context = {'not_ready_blog':not_ready_blog}
+    return render(request , 'main/show_not_ready_blog.html' , context)       
