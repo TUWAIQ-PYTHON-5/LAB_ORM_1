@@ -1,0 +1,56 @@
+{%extends 'blog/base.html'%}
+{% load static %}
+
+
+{% block title %}
+Tech blog
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+img{height:280px;
+width: 1164px;
+
+}
+.container{font-size: 100px;}
+
+</style>
+
+
+<nav class="fixed-top"  class="navbar navbar-light" style="background-color: #245e878b; color: #000;" >
+    <ul class="nav justify-content-center " >
+        <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/" style=" color: #010000;">Home</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="new/posts" style=" color: #010000;">publish with us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="latest/blogs" style=" color: #010000;">Blogs</a>
+        </li>
+
+      </ul>
+  
+    </nav>
+
+
+
+
+<div class="fluid">
+    <img  src="{%static 'images\tech.png'%}" alt="" width="72" height="57">
+</div>
+
+<div class="container ">
+
+<p>Our blog: The technology Is for Everyone.
+</p>
+</div>
+
+
+
+
+
+
+{% endblock %}
