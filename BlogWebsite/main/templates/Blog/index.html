@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h2> Latest Blogs !</h2>
+
+    <div class="row">
+        {% for blog in latest_blogs %}
+            <div class="col-3">
+                <div class="p-4 shadow" >
+                    <h4>{{ blog.title }}</h4>
+                    <h6>publish_date: {{ blog.publish_date }}</h6>
+                    <h6>content : {{ blog.content }}</h6>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+{% endblock %}

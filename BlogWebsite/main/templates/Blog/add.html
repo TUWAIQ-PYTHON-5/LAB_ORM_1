@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Add a New Blog {% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+<h2>Add a New Blog</h2>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <label class="form-label">Title</label>
+    <input type="text" name="title" class="form-control" />
+
+    <label class="form-label">Content</label>
+    <textarea class="form-control" name="content"></textarea>
+
+    <label class="form-label">is_published</label>
+    <select name="is_published" class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+    
+      <label class="form-label">Publish Date</label>
+      <input type="date" name="publish_date"  />
+
+      <br/>
+      <input type="submit" class="btn btn-primary" value="New Game" />
+
+    
+
+</form>
+
+</div>
+
+
+
+{% endblock %}
