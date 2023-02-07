@@ -1,0 +1,23 @@
+{% extends 'main/add_blog.html' %}
+
+{% block title %} Read Blog {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2> Read blog !</h2>
+
+    <div class="row">
+        {% for blog in read_blog %}
+            <div class="col-3">
+                <div class="p-4 shadow" >
+                    <h4>{{ blog.title }}</h4>
+                    <h6>Read on: {{ blog.publish_date }}</h6>
+                    <h6>on: {{ blog.is_published }}</h6>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+{% endblock %}
