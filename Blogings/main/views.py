@@ -17,7 +17,7 @@ def addBlog(request : HttpRequest):
     return render(request, "main/leatestBlogs.html")
 
 
-def latestBlogs(request : HttpRequest):
+def leatestBlogs(request : HttpRequest):
     latest_games = Blog.objects.all()
-    context = {"latestBlogs" : latestBlogs}
+    context = {"leatestBlogs" : leatestBlogs}
     return render(request, "main/leatestBlogs.html", context)
