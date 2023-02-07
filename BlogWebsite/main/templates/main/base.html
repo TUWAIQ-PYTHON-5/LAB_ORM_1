@@ -33,40 +33,22 @@
     </style>
   
   </head>
-  {% if request.COOKIES.mode == "dark" %}
-    <body style="background-color: black; color: white;" >
-  {% else %}
-    <body style="background-color: white; color: black;" >
-      {% endif %}
-      
+  
+    <body >
+  
 
 
     <div  class="container-fluid p-3">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            {% if request.COOKIES.mode == "dark" %}
-              <span class="fs-4" style="color:white ;">Tourism In Saudi </span>
-            {% else %}
-            <span class="fs-4" style="color:black ;">Tourism In Saudi </span>
-            {% endif %}
-            </a>
+      
     
             <ul class="nav nav-pills">
-              <li>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Mode
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'main:light_mode' %}"><button type="button" class="btn btn-primary">Light</button></a></li>
-                    <li><a class="dropdown-item" href="{% url 'main:dark_mode' %}"><button type="button" class="btn btn-primary">Dark</button></a></li>
-                  </ul>
-                </div>
-              </li>
+              
               <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
-              <li class="nav-item"><a href="{% url 'main:about_page' %}" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="{% url 'main:contact_page' %}" class="nav-link">Contact Us</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
             </ul>
             
         </header>
