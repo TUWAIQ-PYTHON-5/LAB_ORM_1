@@ -9,12 +9,12 @@ def addBlog(request : HttpRequest):
 
     if request.method == "POST":
         today = date.today()
-        newBlog = Blog(title= request.POST["title"], description = request.POST["content"], isPublish = request.POST["isPublish"], writinDate=request.POST[today])
+        newBlog = Blog(title= request.POST["title"], description = request.POST["content"], isPublish = request.POST["isPublish"], writingDate=request.POST[today])
         newBlog.save()
         return redirect("main:leatestBlogs")
 
 
-    return render(request, "main/leatestBlogs.html")
+    return render(request, "main/addBlog.html")
 
 
 def leatestBlogs(request : HttpRequest):
