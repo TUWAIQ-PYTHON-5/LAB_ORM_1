@@ -12,8 +12,7 @@ def home(request):
 def add_post(request : HttpRequest):
 
     if request.method == "POST":
-
-        new_post = Post(Title= request.POST["Title"], Content = request.POST["Content"], is_published = request.POST["is_published"],publish_date = request.POST["publish_date"])
+        new_post = Post(Title= request.POST["Title"], Content = request.POST["Content"], is_published = request.POST["is_published"])
         new_post.save()
         return redirect("blog:latest blogs")
     

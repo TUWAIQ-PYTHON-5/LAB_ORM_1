@@ -35,7 +35,7 @@ New Posts
 
   
       
-      <form class="needs-validation" method="POST">
+      <form action=""  method="POST">
         {% csrf_token %}
         <div class="row g-3">
           <div class="col-sm-6">
@@ -54,24 +54,18 @@ New Posts
           </div>
         
 
-
-          <div class="col-12">
-            <label for="p" class="form-label">publish date:</label>
-            <input name="publish_date" type="datetime-local" class="form-control" id="p" >
-          </div>
-
         <hr class="my-4">
 
         <h4 class="mb-3">Make it published</h4>
 
         <div class="my-3">
           
-          <div class="form-check">
-            <input id="Y" name="is_published" type="radio" class="form-check-input" required>
+          <div >
+            <input id="Y" name="is_published" type="radio" value="True" class="form-check-input" >
             <label class="form-check-label" for="Y">YES</label>
           </div>
-          <div class="form-check">
-            <input id="N" name="is_published" type="radio" class="form-check-input" required>
+          <div >
+            <input id="N" name="is_published" type="radio" value="False" class="form-check-input" >
             <label class="form-check-label" for="N">NO</label>
           </div>
         </div>

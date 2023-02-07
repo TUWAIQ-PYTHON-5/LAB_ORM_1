@@ -7,5 +7,5 @@ app_name = "blog"
 urlpatterns = [
     path("", views.home, name="home page"),
     path("new/posts", views.add_post, name="new post" ),
-     path("latest/blogs", views.latest_blog, name="latest blogs" ),
+     path("latest/blogs", views.latest_blog, name="latest blogs" )
 ]
