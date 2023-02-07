@@ -21,4 +21,4 @@ def latest_blogs(request : HttpRequest):
     latest_blogs = Blog.objects.all()
 
     context = {"latest_blogs" : latest_blogs}
-    return render(request, "main/new.html", context)
+    return render(request, "main/index.html", context)
