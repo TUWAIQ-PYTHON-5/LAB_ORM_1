@@ -1,0 +1,23 @@
+{% extends 'main/home.html' %}
+
+{% block title %} Add a New Blog {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h2> Add A Blog !</h2>
+
+    <div class="row">
+        {% for game in latest_games %}
+            <div class="col-3">
+                <div class="p-4 shadow" >
+                    <h4>{{ game.title }}</h4>
+                    <h6>Release on: {{ game.release_date }}</h6>
+                    <h6>Rating: {{ game.rating }}</h6>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+</div>
