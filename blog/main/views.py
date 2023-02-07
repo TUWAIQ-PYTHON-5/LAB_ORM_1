@@ -28,4 +28,10 @@ def show_only_what_is_ready_for_publish(request : HttpRequest):
 def show_only_what_is_not_ready_for_publish(request : HttpRequest):
     not_ready_blog = Post.objects.filter(is_published = False)
     context = {'not_ready_blog':not_ready_blog}
-    return render(request , 'main/show_not_ready_blog.html' , context)       
+    return render(request , 'main/show_not_ready_blog.html' , context)   
+
+
+def show_all(request : HttpRequest):
+    All_blog = Post.objects.all()
+    context = {'all_blog' : All_blog}
+    return render(request , 'main/show_all.html' , context)        
