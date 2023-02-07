@@ -103,16 +103,15 @@ ntent w3-container w3-padding-64" id="about">
     <h4 class="w3-center"> Here are some of published posts . </h4><br><br>
 
 <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
- {% for Post in Posts %}
+ {% for Post in posts %}
 
 <div class="row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card">
+      <div class="card ">
         <div class="card-body">
           <h5 class="card-title">{{ post.title }} </h5>
           <p class="card-text">{{ post.Content }}</p>
           <p class="card-text">{{ post.publish_date }}</p>
-
         </div>
       </div>
     </div>
