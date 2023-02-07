@@ -5,19 +5,19 @@ from datetime import date
 
 
 
+def leatestBlogs(request : HttpRequest):
+    leatestBlogs = Blog.objects.all()
+    context = {"leatestBlogs" : leatestBlogs}
+    return render(request, "main/leatestBlogs.html", context)
+
+
 def addBlog(request : HttpRequest):
 
     if request.method == "POST":
-        today = date.today()
-        newBlog = Blog(title= request.POST["title"], description = request.POST["content"], isPublish = request.POST["isPublish"], writingDate=request.POST[today])
+        newBlog = Blog(title= request.POST["title"], content = request.POST["content"], isPublish = request.POST["isPublish"])
         newBlog.save()
         return redirect("main:leatestBlogs")
 
 
     return render(request, "main/addBlog.html")
 
-
-def leatestBlogs(request : HttpRequest):
-    latest_games = Blog.objects.all()
-    context = {"leatestBlogs" : leatestBlogs}
-    return render(request, "main/leatestBlogs.html", context)
