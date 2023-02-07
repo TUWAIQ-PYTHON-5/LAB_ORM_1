@@ -1,10 +1,23 @@
-from django.views import generic
+from django.shortcuts import render, redirect
+from django.http import HttpRequest, HttpResponse
 from .models import Post
+# Create your views here.
 
-class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
+def index(request : HttpRequest):
+    
+    posts = Post.objects.all()
+    context = {"posts" : posts}
 
-class PostDetail(generic.DetailView):
-    model = Post
-    template_name = 'post_detail.html'
+    return render(request, "main/index.html", context)
+
+
+
+def post_detail(request : HttpRequest):
+
+    if request.method == "POST":
+        new_post = Post(title=request.POST["title"], content= request.POST["content"], is_published= request.POST["is_published"])
+        new_post.save()
+
+        return redirect("main:index_page")
+
+    return render(request, "main/post_detail.html")
