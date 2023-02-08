@@ -7,3 +7,4 @@ class Post(models.Model):
     content = models.TextField()
     is_published = models.BooleanField()
     publish_date = models.DateTimeField(auto_now_add=True)
+    
